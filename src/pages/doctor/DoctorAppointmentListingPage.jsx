@@ -21,11 +21,11 @@ const DoctorAppointmentListingPage = () => {
         const response = await getAllAppointments({ id, status: false });
         console.log('response', response);
         setAppointments(response.data.data);
-        setLoading(false); // Data is loaded
+        setLoading(false); 
       } catch (error) {
         console.error('Error occurred:', error.message);
-        setError(error); // Set the error state
-        setLoading(false); // Loading is complete, but with an error
+        setError(error); 
+        setLoading(false); 
       }
     };
 

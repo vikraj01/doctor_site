@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../components/header';
 import DoctorListing from '../components/DoctorListing';
 import { getAllDoctors } from '../api/api.js';
 import { useNavigate } from 'react-router-dom';
-import Spinner from 'react-bootstrap/Spinner'; // Import the Bootstrap Spinner component
+import Spinner from 'react-bootstrap/Spinner'; 
+import Header from '../components/Header';
 
 const Home = () => {
   const [doctors, setDoctors] = useState([]);
@@ -16,11 +16,11 @@ const Home = () => {
       try {
         const response = await getAllDoctors();
         setDoctors(response.data.data);
-        setLoading(false); // Data is loaded
+        setLoading(false); 
       } catch (error) {
         console.error('Error occurred:', error.message);
-        setError(error); // Set the error state
-        setLoading(false); // Loading is complete, but with an error
+        setError(error); 
+        setLoading(false); 
       }
     };
 

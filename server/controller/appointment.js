@@ -14,16 +14,16 @@ const getAppointment = async (req, res, next) => {
 
   console.log(query);
   try {
-    // Use Mongoose's populate method to replace patientId and doctorId with user data
+    
     const results = await Appointment.find(query)
-      .populate('patientId', 'name email') // Replace 'patientId' with the actual field name in your Appointment schema
-      .populate('doctorId', 'name email'); // Replace 'doctorId' with the actual field name in your Appointment schema
+      .populate('patientId', 'name email') 
+      .populate('doctorId', 'name email'); 
 
     console.log(results);
-    res.status(200).json({ data: results }); // 200 OK
+    res.status(200).json({ data: results }); 
   } catch (error) {
     console.error(error.message)
-    res.status(500).json({ message: error.message }); // 500 Internal Server Error
+    res.status(500).json({ message: error.message }); 
   }
 };
 
@@ -42,9 +42,9 @@ const postAppointment = async (req, res, next) => {
       doctorId,
       patientId
     })
-    res.status(201).json({ appointment }) // 201 Created
+    res.status(201).json({ appointment }) 
   } catch (error) {
-    res.status(500).json({ message: error.message }) // 500 Internal Server Error
+    res.status(500).json({ message: error.message }) 
   }
 }
 
@@ -55,11 +55,11 @@ const updateAppointment = async (req, res, next) => {
       status
     })
     if (!appointment) {
-      return res.status(404).json({ message: 'Appointment not found' }) // 404 Not Found
+      return res.status(404).json({ message: 'Appointment not found' }) 
     }
-    res.status(200).json({ data: appointment }) // 200 OK
+    res.status(200).json({ data: appointment }) 
   } catch (error) {
-    res.status(500).json({ message: error.message }) // 500 Internal Server Error
+    res.status(500).json({ message: error.message }) 
   }
 }
 

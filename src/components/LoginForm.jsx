@@ -52,7 +52,7 @@ const LoginForm = () => {
         localStorage.setItem('user', JSON.stringify(data))
         navigate('/patient/')
       } else {
-        // Handle login failure
+        
         setError('Invalid email or password. Please try again.')
       }
     } catch (error) {

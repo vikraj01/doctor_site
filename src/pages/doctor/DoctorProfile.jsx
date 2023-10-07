@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import DoctorHeader from '../../components/Doctor/DoctorHeader';
 import { getDoctorProfile } from '../../api/api';
 import Profile from '../../components/Profile';
-import Spinner from 'react-bootstrap/Spinner'; // Import the Bootstrap Spinner component
+import Spinner from 'react-bootstrap/Spinner'; 
 
 const DoctorProfile = () => {
   const [profile, setProfile] = useState(null);
@@ -14,7 +14,7 @@ const DoctorProfile = () => {
       console.log('fetching...');
 
       try {
-        const response = await getDoctorProfile(); // Use getDoctorProfile instead of getPatientProfile
+        const response = await getDoctorProfile(); 
         console.log('response', response);
         setProfile(response.data.data);
         setLoading(false);

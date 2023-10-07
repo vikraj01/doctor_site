@@ -4,12 +4,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Spinner from 'react-bootstrap/Spinner'; // Import Bootstrap Spinner
+import Spinner from 'react-bootstrap/Spinner'; 
 import { updatePatientProfile, updateDoctorProfile } from '../api/api';
 import formatDate from '../utils/formantDate';
 
 const Profile = ({ profile }) => {
-  // Use a single state object for profile data and error
+  
   const [formData, setFormData] = useState({
     name: profile ? profile.name : '',
     email: profile ? profile.email : '',
@@ -19,16 +19,16 @@ const Profile = ({ profile }) => {
     imageUrl: profile ? profile.imageUrl : '',
   });
   const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(false); // Loading state
+  const [isLoading, setIsLoading] = useState(false); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setIsLoading(true); // Start loading
+    setIsLoading(true); 
 
 
     const role = JSON.parse(localStorage.getItem('user'))?.role
-    // Replace the following with the actual API call to update data
+    
     try {
       let response;
 
@@ -41,16 +41,16 @@ const Profile = ({ profile }) => {
       console.log(response)
       if (response.status==200) {
         console.log('Data updated successfully');
-        setError(null); // Clear any previous errors
+        setError(null); 
       } else {
         console.error('Error updating data');
-        setError('Error updating data. Please try again.'); // Set the error message
+        setError('Error updating data. Please try again.'); 
       }
     } catch (error) {
       console.error('Error:', error);
-      setError('Network error. Please check your connection.'); // Set the error message
+      setError('Network error. Please check your connection.'); 
     } finally {
-      setIsLoading(false); // Stop loading
+      setIsLoading(false); 
     }
   };
 

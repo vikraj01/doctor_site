@@ -60,7 +60,7 @@ const RegisterForm = () => {
       }
       setFormData(defaultData)
     } catch (error) {
-      // console.error('Error registering user:', error)
+      
       setError("User Already Exist!");
     }
   }
@@ -150,7 +150,6 @@ const RegisterForm = () => {
               Register
             </Button>
 
-            {/* Add a link to navigate to the login form */}
             <p>
               Already have an account?{' '}
               <Link to='/patient-login'>Login here</Link>

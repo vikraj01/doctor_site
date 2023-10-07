@@ -29,7 +29,7 @@ const AppointmentForm = () => {
     e.preventDefault()
     console.log("submitting...")
     try {
-      // const { doctorId } = useParams()
+      
       const patientId = JSON.parse(localStorage.getItem('user'))?.data._id
       const response = await createAppointment({ ...formData, doctorId, patientId })
       console.log(response)

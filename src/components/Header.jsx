@@ -8,8 +8,8 @@ const LogoutNavItem = () => {
   const navigate = useNavigate()
 
   const handleLogout = e => {
-    e.preventDefault() // Prevent the default behavior (navigation)
-    localStorage.clear() // Clear local storage or perform any logout action
+    e.preventDefault() 
+    localStorage.clear() 
     navigate('/')
   }
 

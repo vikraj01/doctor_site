@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Profile from '../components/Profile';
-import Header from '../components/header';
 import { getPatientProfile } from '../api/api';
 import { useNavigate } from 'react-router-dom';
-import Spinner from 'react-bootstrap/Spinner'; // Import the Bootstrap Spinner component
+import Spinner from 'react-bootstrap/Spinner'; 
+import Header from '../components/Header';
 
 const ProfilePage = () => {
   const [profile, setProfile] = useState(null);

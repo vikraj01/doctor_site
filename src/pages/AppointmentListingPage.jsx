@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../components/header';
 import AppointmentListing from '../components/AppointementHistory/AppointmentListing';
 import { getAllAppointments } from '../api/api';
 import { useNavigate } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
+import Header from '../components/Header';
 
 const AppointmentListingPage = () => {
   const [appointments, setAppointments] = useState([]);

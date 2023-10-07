@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../components/header';
 import AppointmentListing from '../components/AppointementHistory/AppointmentListing';
 import { getAllAppointments } from '../api/api';
 import { useNavigate } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
+import Header from '../components/Header';
 
 const AppointmentHistoryPage = () => {
   const [appointments, setAppointments] = useState([]);
@@ -21,11 +21,11 @@ const AppointmentHistoryPage = () => {
         const response = await getAllAppointments({ id, status: true });
         console.log('response', response);
         setAppointments(response.data.data);
-        setLoading(false); // Data is loaded
+        setLoading(false); 
       } catch (error) {
         console.error('Error occurred:', error.message);
-        setError(error); // Set the error state
-        setLoading(false); // Loading is complete, but with an error
+        setError(error); 
+        setLoading(false); 
       }
     };
 

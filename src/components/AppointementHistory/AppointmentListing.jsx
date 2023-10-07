@@ -18,7 +18,7 @@ const AppointmentListing = ({ appointments }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedAppointment, setSelectedAppointment] = useState(null);
 
-  const cardColors = ['#FFC107', '#03A9F4']; // Background colors for cards
+  const cardColors = ['#FFC107', '#03A9F4']; 
 
   const handleCardClick = (appointment) => {
     setSelectedAppointment(appointment);
@@ -43,7 +43,7 @@ const AppointmentListing = ({ appointments }) => {
                 borderRadius: '4px',
                 boxShadow: '0 2px 5px 0 rgba(0, 0, 0, 0.16)',
                 transition: 'background-color 0.3s ease-in-out',
-                cursor: 'pointer', // Add cursor pointer for click effect
+                cursor: 'pointer', 
               }}
               onClick={() => handleCardClick(appointment)}
             >
@@ -88,7 +88,6 @@ const AppointmentListing = ({ appointments }) => {
         ))}
       </Row>
 
-      {/* Appointment Details Modal */}
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
           <Modal.Title>Appointment Details</Modal.Title>
